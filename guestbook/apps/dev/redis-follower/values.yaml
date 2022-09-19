@@ -73,6 +73,7 @@ resources:
 envs: []
 
 extraLabels:
+  app: redis
   role: follower
   tier: backend
 
