@@ -9,6 +9,7 @@ replicaCount: 3
 
 image:
   repository: us-docker.pkg.dev/google-samples/containers/gke/gb-frontend
+  version: v5
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
   tag: "dev"
