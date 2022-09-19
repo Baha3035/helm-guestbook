@@ -4,6 +4,9 @@ metadata:
   name: {{ include "guestbook.fullname" . }}
   labels:
     {{- include "guestbook.labels" . | nindent 4 }}
+  {{- with .Values.extraLabels }}
+      {{- toYaml . | nindent 4 }}
+  {{- end }}
 spec:
   {{- if not .Values.autoscaling.enabled }}
   replicas: {{ .Values.replicaCount }}
@@ -11,6 +14,9 @@ spec:
   selector:
     matchLabels:
       {{- include "guestbook.selectorLabels" . | nindent 6 }}
+    {{- with .Values.matchLabels }}
+      {{- toYaml . | nindent 6 }}
+    {{- end }}
   template:
     metadata:
       {{- with .Values.podAnnotations }}
@@ -19,6 +25,9 @@ spec:
       {{- end }}
       labels:
         {{- include "guestbook.selectorLabels" . | nindent 8 }}
+      {{- with .Values.extraLabels }}
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
     spec:
       {{- with .Values.imagePullSecrets }}
       imagePullSecrets:

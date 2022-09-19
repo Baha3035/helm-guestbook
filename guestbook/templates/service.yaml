@@ -3,7 +3,10 @@ kind: Service
 metadata:
   name: {{ include "guestbook.fullname" . }}
   labels:
-    {{- include "guestbook.labels" . | nindent 4 }}
+    {{- include "guestbook.labels" . | nindent 4 }}\
+    {{- with .Values.extraLabels }}
+      {{- toYaml . | nindent 4 }}
+    {{- end }}
 spec:
   type: {{ .Values.service.type }}
   ports:
@@ -13,3 +16,6 @@ spec:
       name: http
   selector:
     {{- include "guestbook.selectorLabels" . | nindent 4 }}
+  {{- with .Values.matchLabels }}
+    {{- toYaml . | nindent 4 }}
+  {{- end }}
