@@ -40,6 +40,7 @@ helm.sh/chart: {{ include "guestbook.chart" . }}
 app.kubernetes.io/version: {{ .Chart.AppVersion | quote }}
 {{- end }}
 app.kubernetes.io/managed-by: {{ .Release.Service }}
+{{- .Values.extraLabels }}
 {{- end }}
 
 {{/*
@@ -48,6 +49,7 @@ Selector labels
 {{- define "guestbook.selectorLabels" -}}
 app.kubernetes.io/name: {{ include "guestbook.name" . }}
 app.kubernetes.io/instance: {{ .Release.Name }}
+{{- .Values.matchLabels }}
 {{- end }}
 
 {{/*
