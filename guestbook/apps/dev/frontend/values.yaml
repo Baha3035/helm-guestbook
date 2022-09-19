@@ -45,6 +45,11 @@ service:
     app: guestbook
     tier: frontend
 
+ports:
+  - name: ""
+    containerPort: 80
+    protocol: ""
+
 ingress:
   enabled: false
   className: ""
@@ -62,9 +67,9 @@ ingress:
   #      - chart-example.local
 
 resources:
-  limits:
-    cpu: 100m
-    memory: 128Mi
+  # limits:
+  #   cpu: 100m
+  #   memory: 128Mi
   requests:
     cpu: 100m
     memory: 100Mi

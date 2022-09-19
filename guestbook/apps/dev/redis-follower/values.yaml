@@ -46,6 +46,11 @@ service:
     role: follower
     tier: backend
 
+ports:
+  - name: ""
+    containerPort: 6379
+    protocol: ""
+
 ingress:
   enabled: false
   className: ""
@@ -63,9 +68,9 @@ ingress:
   #      - chart-example.local
 
 resources:
-  limits:
-    cpu: 100m
-    memory: 128Mi
+  # limits:
+  #   cpu: 100m
+  #   memory: 128Mi
   requests:
     cpu: 100m
     memory: 100Mi

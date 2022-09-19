@@ -42,6 +42,8 @@ service:
   port: 80
   labels: {}
 
+ports: []
+
 ingress:
   enabled: false
   className: ""
