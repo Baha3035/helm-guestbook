@@ -34,11 +34,13 @@ Create chart name and version as used by the chart label.
 Common labels
 */}}
 
+{{/*
 {{- define "guestbook.extraLabels" -}}
 {{- range $k, $v := .Values.extraLabels -}}
     {{ $k }}: {{ $v | quote }}
 {{- end -}}
 {{- end -}}
+*/}}
 
 {{- define "guestbook.labels" -}}
 helm.sh/chart: {{ include "guestbook.chart" . }}
@@ -47,7 +49,6 @@ helm.sh/chart: {{ include "guestbook.chart" . }}
 app.kubernetes.io/version: {{ .Chart.AppVersion | quote }}
 {{- end }}
 app.kubernetes.io/managed-by: {{ .Release.Service }}
-{{ include "guestbook.extraLabels" . }}
 {{- end }}
 
 {{/*
