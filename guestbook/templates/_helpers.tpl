@@ -34,7 +34,7 @@ Create chart name and version as used by the chart label.
 Common labels
 */}}
 
-{{- define "guestbook.extralabels" -}}
+{{- define "guestbook.extraLabels" -}}
 {{- range $k, $v := .Values.extraLabels -}}
 {{ $k }}: {{ $v }}
 {{- end -}}
