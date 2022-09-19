@@ -36,7 +36,7 @@ Common labels
 
 {{- define "guestbook.extraLabels" -}}
 {{- range $k, $v := .Values.extraLabels -}}
-{{ $k }}: {{ $v }}
+{{ $k }}: {{ $v | quote }}
 {{- end -}}
 {{- end -}}
 
