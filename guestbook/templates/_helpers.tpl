@@ -34,14 +34,6 @@ Create chart name and version as used by the chart label.
 Common labels
 */}}
 
-{{/*
-{{- define "guestbook.extraLabels" -}}
-{{- range $k, $v := .Values.extraLabels -}}
-    {{ $k }}: {{ $v | quote }}
-{{- end -}}
-{{- end -}}
-*/}}
-
 {{- define "guestbook.labels" -}}
 helm.sh/chart: {{ include "guestbook.chart" . }}
 {{ include "guestbook.selectorLabels" . }}

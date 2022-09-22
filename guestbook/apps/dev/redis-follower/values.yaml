@@ -39,6 +39,7 @@ securityContext: {}
   # runAsUser: 1000
 
 service:
+  name: "redis-follower"
   type: ClusterIP
   port: 6379
   labels:

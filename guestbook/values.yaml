@@ -38,6 +38,7 @@ securityContext: {}
   # runAsUser: 1000
 
 service:
+  name: ""
   type: ClusterIP
   port: 80
   labels: {}
