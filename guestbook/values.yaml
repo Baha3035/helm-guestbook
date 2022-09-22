@@ -40,7 +40,8 @@ securityContext: {}
 service:
   name: ""
   type: ClusterIP
-  port: 80
+  port: ""
+  targetPort: ""
   labels: {}
 
 ports: []

@@ -42,6 +42,7 @@ service:
   name: "redis-leader"
   type: NodePort
   port: 30000
+  targetPort: 6379
   labels:
     app: redis
     role: leader
@@ -53,7 +54,7 @@ ports:
     protocol: ""
 
 ingress:
-  enabled: true
+  enabled: false
   className: ""
   annotations:
     kubernetes.io/ingress.class: "gce"
