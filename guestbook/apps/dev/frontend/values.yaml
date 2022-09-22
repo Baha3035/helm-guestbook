@@ -39,6 +39,7 @@ securityContext: {}
   # runAsUser: 1000
 
 service:
+  name: "frontend"
   type: NodePort
   port: 30000
   port: 80
