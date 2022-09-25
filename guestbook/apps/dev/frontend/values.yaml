@@ -58,9 +58,9 @@ ingress:
   className: ""
   annotations:
     kubernetes.io/ingress.class: "gce"
-    kubernetes.io/ingress.global-static-ip-name: baha.com
+    kubernetes.io/ingress.global-static-ip-name: guestbook-frontend
   hosts:
-    - host: ""
+    - host: "guestbook.panopta-testing.com"
       paths:
         - path: /*
           pathType: ImplementationSpecific
