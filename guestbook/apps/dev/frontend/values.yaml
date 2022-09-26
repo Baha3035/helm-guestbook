@@ -41,9 +41,8 @@ securityContext: {}
 service:
   name: "frontend"
   type: NodePort
-  port: 30000
   port: 80
-  targetPort: ""
+  targetPort: 80
   labels:
     app: guestbook
     tier: frontend
